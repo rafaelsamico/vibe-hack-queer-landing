@@ -2,7 +2,7 @@ import { Code2, Github, Instagram, Twitter } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/5 py-12">
+    <footer className="relative bg-background border-t border-white/5 py-12">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
           <div className="flex items-center gap-2.5">
@@ -19,8 +19,16 @@ export function Footer() {
             <p className="text-center font-mono text-xs text-foreground/55">
               © 2026 Vibe Hack Queer
             </p>
-            <p className="font-mono text-xs text-white">
-              Feito com orgulho no CIn-UFPE
+            <p className="font-mono text-xs font-bold text-white">
+              Feito com orgulho no{" "}
+              <a
+                href="https://portal.cin.ufpe.br/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-neon-cyan transition hover:text-neon-pink hover:underline"
+              >
+                CIn-UFPE
+              </a>
             </p>
           </div>
           
