@@ -2,7 +2,6 @@ import { Code2 } from "lucide-react";
 
 const links = [
   { href: "#sobre", label: "Sobre" },
-  { href: "#trilhas", label: "Trilhas" },
   { href: "#cronograma", label: "Cronograma" },
   { href: "#faq", label: "FAQ" },
 ];
@@ -13,12 +12,12 @@ export function Nav() {
       <div className="glass border-b border-white/5">
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <a href="#top" className="flex items-center gap-2.5 group">
-            <span className="grid h-9 w-9 place-items-center rounded-lg bg-neon-pink/15 text-neon-pink ring-1 ring-neon-pink/40 group-hover:bg-neon-pink/25 transition">
+            <span className="grid h-9 w-9 place-items-center rounded-lg bg-neon-pink/15 text-neon-pink ring-2 ring-neon-cyan/40">
               <Code2 className="h-4 w-4" />
             </span>
-            <span className="font-display text-sm font-bold leading-tight">
+            <span className="font-display text-md font-bold leading-tight text-neon-cyan">
               VIBE HACK
-              <span className="block text-[10px] tracking-[0.3em] text-neon-pink">QUEER</span>
+              <span className="block text-md text-neon-pink">QUEER</span>
             </span>
           </a>
 

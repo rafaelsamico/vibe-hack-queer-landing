@@ -3,15 +3,12 @@ import { MeshBackdrop } from "@/components/site/MeshBackdrop";
 import { Nav } from "@/components/site/Nav";
 import { Hero } from "@/components/site/Hero";
 import { Sobre } from "@/components/site/Sobre";
-import { Trilhas } from "@/components/site/Trilhas";
 import { Cronograma } from "@/components/site/Cronograma";
 import { FAQ } from "@/components/site/FAQ";
-import { CTAFinal } from "@/components/site/CTAFinal";
 import { Footer } from "@/components/site/Footer";
 
-const title = "Vibe Hack Queer — Hackathon de Vibe Coding LGBTQIAPN+";
-const description =
-  "Três dias de vibe coding, mentorias e comunidade para pessoas LGBTQIAPN+ e aliades. 14–16 de novembro de 2026, CIn UFPE, Recife.";
+const title = "Vibe Hack Queer";
+const description = "Hackathon de vibe coding para a comunidade LGBTQIAPN+.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -63,10 +60,8 @@ function Index() {
       <main>
         <Hero />
         <Sobre />
-        <Trilhas />
         <Cronograma />
         <FAQ />
-        <CTAFinal />
       </main>
       <Footer />
     </div>
