@@ -148,9 +148,13 @@
   .mesh-bg { background-image: var(--gradient-mesh); }
 
   .slot-reel {
+    --reel-h: 44px;
+    --reel-w: 32px;
     position: relative;
     overflow: hidden;
-    border-radius: 0.85rem;
+    width: var(--reel-w);
+    height: var(--reel-h);
+    border-radius: 0.7rem;
     background: linear-gradient(
       oklch(0.11 0.02 290 / 0.9),
       oklch(0.2 0.04 295 / 0.9)
@@ -189,10 +193,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    height: var(--reel-h);
     line-height: 1;
     font-variant-numeric: tabular-nums;
     color: oklch(0.97 0.01 300);
     text-shadow: 0 0 14px oklch(0.86 0.16 200 / 0.6);
+  }
+
+  @media (min-width: 768px) {
+    .slot-reel {
+      --reel-h: 64px;
+      --reel-w: 48px;
+      border-radius: 0.85rem;
+    }
   }
 }
 

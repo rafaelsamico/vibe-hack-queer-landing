@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-const FINAL_DATE = new Date(2026, 6, 1, 23, 59, 59);
-const ITEM_H = 64;
+const FINAL_DATE = new Date(2026, 5, 1, 23, 59, 59);
 const CYCLES = 8;
 
 interface TimeUnits {
@@ -33,7 +32,7 @@ function SlotReel({ digit }: { digit: number }) {
     if (firstRun.current) {
       firstRun.current = false;
       el.style.transition = "none";
-      el.style.transform = `translateY(-${digit * ITEM_H}px)`;
+      el.style.transform = `translateY(calc(var(--reel-h) * ${-digit}))`;
       void el.offsetHeight; // force reflow so the next change can transition
       el.style.transition = "";
       posRef.current = digit;
@@ -48,7 +47,7 @@ function SlotReel({ digit }: { digit: number }) {
     if (cur + forward + 10 >= CYCLES * 10) {
       const snapped = cur % 10;
       el.style.transition = "none";
-      el.style.transform = `translateY(-${snapped * ITEM_H}px)`;
+      el.style.transform = `translateY(calc(var(--reel-h) * ${-snapped}))`;
       void el.offsetHeight;
       el.style.transition = "";
       cur = snapped;
@@ -56,23 +55,15 @@ function SlotReel({ digit }: { digit: number }) {
 
     // Always roll forward, plus one full turn for the slot-machine feel.
     const target = cur + forward + 10;
-    el.style.transform = `translateY(-${target * ITEM_H}px)`;
+    el.style.transform = `translateY(calc(var(--reel-h) * ${-target}))`;
     posRef.current = target;
   }, [digit]);
 
   return (
-    <div
-      className="slot-reel"
-      style={{ height: ITEM_H, width: 50 }}
-      aria-hidden
-    >
+    <div className="slot-reel" aria-hidden>
       <div ref={stripRef} className="slot-reel-strip">
         {Array.from({ length: CYCLES * 10 }, (_, i) => (
-          <div
-            key={i}
-            className="slot-digit font-display text-3xl"
-            style={{ height: ITEM_H }}
-          >
+          <div key={i} className="slot-digit font-display text-2xl md:text-4xl">
             {i % 10}
           </div>
         ))}
@@ -86,8 +77,8 @@ function ReelGroup({ value, label }: { value: number; label: string }) {
   const ones = value % 10;
 
   return (
-    <div className="flex flex-col items-center gap-3">
-      <div className="flex gap-2">
+    <div className="flex flex-col items-center gap-2 md:gap-3">
+      <div className="flex gap-1.5 md:gap-2">
         <SlotReel digit={tens} />
         <SlotReel digit={ones} />
       </div>
@@ -132,13 +123,13 @@ export function ContadorSlot({ compact = false }: { compact?: boolean }) {
   );
 
   const reels = (
-    <div className="flex items-start justify-center gap-3 md:gap-5">
+    <div className="flex items-start justify-center gap-2 md:gap-5">
       <ReelGroup value={time.dias} label="Dias" />
-      <span className="mt-4 font-display text-4xl font-bold text-neon-pink/50">
+      <span className="mt-3 font-display text-2xl font-bold text-neon-pink/50 md:mt-4 md:text-4xl">
         :
       </span>
       <ReelGroup value={time.horas} label="Horas" />
-      <span className="mt-4 font-display text-4xl font-bold text-neon-pink/50">
+      <span className="mt-3 font-display text-2xl font-bold text-neon-pink/50 md:mt-4 md:text-4xl">
         :
       </span>
       <ReelGroup value={time.minutos} label="Minutos" />
@@ -152,7 +143,7 @@ export function ContadorSlot({ compact = false }: { compact?: boolean }) {
         <p className="font-mono text-xs uppercase tracking-[0.3em] text-neon-cyan/80">
           {finished ? "É hoje!" : "Contagem regressiva"}
         </p>
-        <div className="glass rounded-2xl px-6 py-5 md:px-8">{reels}</div>
+        <div className="glass rounded-2xl px-4 py-4 md:px-8 md:py-5">{reels}</div>
       </div>
     );
   }
@@ -184,7 +175,7 @@ export function ContadorSlot({ compact = false }: { compact?: boolean }) {
         <p className="mt-8 text-center text-sm text-foreground/60">
           Até o{" "}
           <span className="font-bold text-neon-pink">Vibe Hack Queer</span> —{" "}
-          <span className="font-mono">01/07/26</span>
+          <span className="font-mono">01/06/26</span>
         </p>
       </div>
     </section>
