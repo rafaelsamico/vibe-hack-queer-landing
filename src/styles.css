@@ -76,8 +76,10 @@
   --neon-mint: oklch(0.88 0.20 165);    /* ~#22ffaa */
   --neon-yellow: oklch(0.92 0.18 95);   /* ~#ffd400 */
 
-  --glass: oklch(1 0 0 / 4%);
-  --glass-border: oklch(1 0 0 / 10%);
+  /* Visible on its own so cards survive when backdrop-filter is unavailable
+     (e.g. iOS Low Power Mode); the blur in .glass is a progressive enhancement. */
+  --glass: oklch(0.28 0.03 295 / 0.55);
+  --glass-border: oklch(1 0 0 / 14%);
 
   --shadow-glow-pink: 0 0 40px oklch(0.72 0.28 350 / 0.45), 0 0 90px oklch(0.72 0.28 350 / 0.25);
   --shadow-glow-cyan: 0 0 40px oklch(0.86 0.16 200 / 0.45), 0 0 90px oklch(0.86 0.16 200 / 0.2);
