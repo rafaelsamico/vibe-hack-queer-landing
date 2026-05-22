@@ -1,4 +1,5 @@
 import { ArrowRight, Calendar, MapPin, Sparkles } from "lucide-react";
+import { ContadorSlot } from "@/components/site/ContadorSlot";
 
 export function Hero() {
   return (
@@ -20,14 +21,21 @@ export function Hero() {
             Dois sábados de <br /> treinamento e competição <br /> para celebrar o Mês do Orgulho
           </p>
 
-          <div className="mt-6 flex flex-col sm:flex-row items-center gap-4">
-            <a
+          <div className="mt-10">
+            <ContadorSlot compact />
+          </div>
+
+          <div className="mt-8 flex flex-col sm:flex-row items-center gap-4">
+            <button
               id="inscrever"
-              href="#"
-              className="inline-flex items-center gap-2 rounded-full bg-neon-pink px-8 py-4 text-sm font-bold uppercase tracking-[0.18em] text-primary-foreground animate-pulse-glow hover:scale-[1.03] transition"
+              type="button"
+              disabled
+              aria-disabled="true"
+              title="Inscrições em breve"
+              className="inline-flex items-center gap-2 rounded-full bg-neon-pink/30 px-8 py-4 text-sm font-bold uppercase tracking-[0.18em] text-primary-foreground/60 cursor-not-allowed"
             >
               Inscrever <ArrowRight className="h-4 w-4" />
-            </a>
+            </button>
             <a
               href="#sobre"
               className="inline-flex items-center gap-2 rounded-full border border-neon-cyan/60 bg-neon-cyan/5 px-8 py-4 text-sm font-bold uppercase tracking-[0.18em] text-neon-cyan hover:bg-neon-cyan/15 transition"

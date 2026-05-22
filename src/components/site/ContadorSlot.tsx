@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-const FINAL_DATE = new Date(2026, 4, 25, 23, 59, 59);
+const FINAL_DATE = new Date(2026, 6, 1, 23, 59, 59);
 const ITEM_H = 64;
 const CYCLES = 8;
 
@@ -98,7 +98,7 @@ function ReelGroup({ value, label }: { value: number; label: string }) {
   );
 }
 
-export function ContadorSlot() {
+export function ContadorSlot({ compact = false }: { compact?: boolean }) {
   const [time, setTime] = useState<TimeUnits>({ dias: 0, horas: 0, minutos: 0 });
 
   useEffect(() => {
@@ -123,6 +123,40 @@ export function ContadorSlot() {
   const finished =
     time.dias === 0 && time.horas === 0 && time.minutos === 0;
 
+  const srText = (
+    <p className="sr-only" aria-live="polite">
+      {finished
+        ? "O evento começou."
+        : `Faltam ${time.dias} dias, ${time.horas} horas e ${time.minutos} minutos.`}
+    </p>
+  );
+
+  const reels = (
+    <div className="flex items-start justify-center gap-3 md:gap-5">
+      <ReelGroup value={time.dias} label="Dias" />
+      <span className="mt-4 font-display text-4xl font-bold text-neon-pink/50">
+        :
+      </span>
+      <ReelGroup value={time.horas} label="Horas" />
+      <span className="mt-4 font-display text-4xl font-bold text-neon-pink/50">
+        :
+      </span>
+      <ReelGroup value={time.minutos} label="Minutos" />
+    </div>
+  );
+
+  if (compact) {
+    return (
+      <div className="flex flex-col items-center gap-3">
+        {srText}
+        <p className="font-mono text-xs uppercase tracking-[0.3em] text-neon-cyan/80">
+          {finished ? "É hoje!" : "Contagem regressiva"}
+        </p>
+        <div className="glass rounded-2xl px-6 py-5 md:px-8">{reels}</div>
+      </div>
+    );
+  }
+
   return (
     <section className="relative py-16">
       <div className="mx-auto max-w-7xl px-6">
@@ -141,30 +175,16 @@ export function ContadorSlot() {
           </h2>
         </div>
 
-        <p className="sr-only" aria-live="polite">
-          {finished
-            ? "O evento começou."
-            : `Faltam ${time.dias} dias, ${time.horas} horas e ${time.minutos} minutos.`}
-        </p>
+        {srText}
 
         <div className="glass mx-auto mt-12 w-fit rounded-3xl p-8 md:p-12">
-          <div className="flex items-start justify-center gap-3 md:gap-5">
-            <ReelGroup value={time.dias} label="Dias" />
-            <span className="mt-4 font-display text-4xl font-bold text-neon-pink/50">
-              :
-            </span>
-            <ReelGroup value={time.horas} label="Horas" />
-            <span className="mt-4 font-display text-4xl font-bold text-neon-pink/50">
-              :
-            </span>
-            <ReelGroup value={time.minutos} label="Minutos" />
-          </div>
+          {reels}
         </div>
 
         <p className="mt-8 text-center text-sm text-foreground/60">
           Até o{" "}
           <span className="font-bold text-neon-pink">Vibe Hack Queer</span> —{" "}
-          <span className="font-mono">25/05/26</span>
+          <span className="font-mono">01/07/26</span>
         </p>
       </div>
     </section>

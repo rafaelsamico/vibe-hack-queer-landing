@@ -31,12 +31,15 @@ export function Nav() {
             ))}
           </ul>
 
-          <a
-            href="#inscrever"
-            className="inline-flex items-center justify-center rounded-full bg-neon-pink px-5 py-2.5 text-xs font-bold uppercase tracking-[0.18em] text-primary-foreground animate-pulse-glow hover:scale-[1.03] transition"
+          <button
+            type="button"
+            disabled
+            aria-disabled="true"
+            title="Inscrições em breve"
+            className="inline-flex items-center justify-center rounded-full bg-neon-pink/30 px-5 py-2.5 text-xs font-bold uppercase tracking-[0.18em] text-primary-foreground/60 cursor-not-allowed"
           >
             Inscrever
-          </a>
+          </button>
         </nav>
       </div>
     </header>
