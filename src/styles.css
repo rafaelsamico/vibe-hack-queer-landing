@@ -146,6 +146,54 @@
   }
 
   .mesh-bg { background-image: var(--gradient-mesh); }
+
+  .slot-reel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.85rem;
+    background: linear-gradient(
+      oklch(0.11 0.02 290 / 0.9),
+      oklch(0.2 0.04 295 / 0.9)
+    );
+    border: 1px solid var(--glass-border);
+    box-shadow:
+      inset 0 8px 16px oklch(0 0 0 / 0.6),
+      inset 0 -8px 16px oklch(0 0 0 / 0.6),
+      0 0 18px oklch(0.72 0.28 350 / 0.3);
+  }
+  .slot-reel::before,
+  .slot-reel::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 40%;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .slot-reel::before {
+    top: 0;
+    background: linear-gradient(oklch(0.11 0.02 290 / 0.95), transparent);
+  }
+  .slot-reel::after {
+    bottom: 0;
+    background: linear-gradient(transparent, oklch(0.11 0.02 290 / 0.95));
+  }
+  .slot-reel-strip {
+    display: flex;
+    flex-direction: column;
+    transition: transform 1.15s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+  }
+  .slot-digit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+    color: oklch(0.97 0.01 300);
+    text-shadow: 0 0 14px oklch(0.86 0.16 200 / 0.6);
+  }
 }
 
 @keyframes float-slow {
@@ -169,4 +217,5 @@
   .animate-float-slow,
   .animate-float-x,
   .animate-pulse-glow { animation: none; }
+  .slot-reel-strip { transition: none; }
 }
