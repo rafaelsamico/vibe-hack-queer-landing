@@ -49,7 +49,7 @@ export function Hero() {
             <div className="flex flex-col items-center gap-2">
               <div className="flex items-center gap-2 text-sm text-white">
                 <Calendar className="h-4 w-4 text-neon-cyan" />
-                <span className="font-mono">27/06/26 e 04/07/26</span>
+                <span className="font-mono">20/06/26 e 27/06/26</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-white">
                 <MapPin className="h-4 w-4 text-neon-pink" />

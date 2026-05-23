@@ -1,7 +1,7 @@
 const days = [
   {
     day: "BOOTCAMP",
-    date: "Sábado · 27/06/26",
+    date: "Sábado · 20/06/26",
     items: [
       ["Aulão: Design de Produto"],
       ["Aulão: Vibe Coding"],
@@ -10,7 +10,7 @@ const days = [
   },
   {
     day: "HACKATHON",
-    date: "Sábado · 04/07/26",
+    date: "Sábado · 27/06/26",
     items: [
       ["Lançamento do desafio"],
       ["Construção de soluções"],
