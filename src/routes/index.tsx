@@ -6,6 +6,7 @@ import { Organizacao } from "@/components/site/Organizacao";
 import { Sobre } from "@/components/site/Sobre";
 import { Cronograma } from "@/components/site/Cronograma";
 import { FAQ } from "@/components/site/FAQ";
+import { Patrocinadores } from "@/components/site/Patrocinadores";
 import { Footer } from "@/components/site/Footer";
 
 const title = "Vibe Hack Queer";
@@ -64,6 +65,7 @@ function Index() {
         <Sobre />
         <Cronograma />
         <FAQ />
+        <Patrocinadores />
       </main>
       <Footer />
     </div>

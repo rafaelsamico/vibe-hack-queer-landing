@@ -89,7 +89,7 @@ function ReelGroup({ value, label }: { value: number; label: string }) {
   );
 }
 
-export function ContadorSlot({ compact = false }: { compact?: boolean }) {
+export function ContadorSlot() {
   const [time, setTime] = useState<TimeUnits>({ dias: 0, horas: 0, minutos: 0 });
 
   useEffect(() => {
@@ -136,48 +136,13 @@ export function ContadorSlot({ compact = false }: { compact?: boolean }) {
     </div>
   );
 
-  if (compact) {
-    return (
-      <div className="flex flex-col items-center gap-3">
-        {srText}
-        <p className="font-mono text-xs uppercase tracking-[0.3em] text-neon-cyan/80">
-          {finished ? "É hoje!" : "Contagem regressiva"}
-        </p>
-        <div className="glass rounded-2xl px-4 py-4 md:px-8 md:py-5">{reels}</div>
-      </div>
-    );
-  }
-
   return (
-    <section className="relative py-16">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="mx-auto flex max-w-2xl flex-col items-center text-center">
-          <p className="font-mono text-md uppercase tracking-[0.3em] text-white">
-            // CONTAGEM REGRESSIVA
-          </p>
-          <h2 className="mt-4 font-display text-4xl font-bold leading-tight md:text-5xl">
-            {finished ? (
-              <span className="text-glow-pink">É hoje!</span>
-            ) : (
-              <>
-                Faltam <span className="text-glow-cyan">poucos dias</span>
-              </>
-            )}
-          </h2>
-        </div>
-
-        {srText}
-
-        <div className="glass mx-auto mt-12 w-fit rounded-3xl p-8 md:p-12">
-          {reels}
-        </div>
-
-        <p className="mt-8 text-center text-sm text-foreground/60">
-          Até o{" "}
-          <span className="font-bold text-neon-pink">Vibe Hack Queer</span> —{" "}
-          <span className="font-mono">01/06/26</span>
-        </p>
-      </div>
-    </section>
+    <div className="flex flex-col items-center gap-3">
+      {srText}
+      <p className="font-mono text-xs uppercase tracking-[0.3em] text-neon-cyan/80">
+        {finished ? "Inscrições abertas" : "Contagem regressiva para inscrições"}
+      </p>
+      <div className="glass rounded-2xl px-4 py-4 md:px-8 md:py-5">{reels}</div>
+    </div>
   );
 }

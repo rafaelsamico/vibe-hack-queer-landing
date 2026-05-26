@@ -23,8 +23,8 @@ const faqs = [
 export function FAQ() {
   return (
     <section id="faq" className="relative py-10">
-      <div className="mx-auto max-w-3xl px-6">
-        <div className="text-left">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="mx-auto max-w-2xl">
           <p className="font-mono text-md uppercase tracking-[0.3em] text-white">
             // FAQ
           </p>
@@ -33,7 +33,7 @@ export function FAQ() {
           </h2>
         </div>
 
-        <div className="glass mt-12 rounded-2xl p-2 md:p-4">
+        <div className="glass mx-auto mt-12 max-w-2xl rounded-2xl p-2 md:p-4">
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((f, i) => (
               <AccordionItem

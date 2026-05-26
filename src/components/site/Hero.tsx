@@ -21,8 +21,22 @@ export function Hero() {
             Dois sábados de <br /> treinamento e competição <br /> para celebrar o Mês do Orgulho
           </p>
 
+          {/* Event card */}
+          <div className="mt-8 glass max-w-2xl rounded-2xl p-5 md:p-8">
+            <div className="flex flex-col items-center gap-2">
+              <div className="flex items-center gap-2 text-sm text-white">
+                <Calendar className="h-4 w-4 text-neon-cyan" />
+                <span className="font-mono">20/06/26 e 27/06/26</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-white">
+                <MapPin className="h-4 w-4 text-neon-pink" />
+                <span className="font-mono">CIn-UFPE</span>
+              </div>
+            </div>
+          </div>
+
           <div className="mt-10">
-            <ContadorSlot compact />
+            <ContadorSlot />
           </div>
 
           <div className="mt-8 flex flex-col sm:flex-row items-center gap-4">
@@ -42,20 +56,6 @@ export function Hero() {
             >
               Saiba mais
             </a>
-          </div>
-
-          {/* Event card */}
-          <div className="mt-8 glass max-w-2xl rounded-2xl p-5 md:p-8">
-            <div className="flex flex-col items-center gap-2">
-              <div className="flex items-center gap-2 text-sm text-white">
-                <Calendar className="h-4 w-4 text-neon-cyan" />
-                <span className="font-mono">20/06/26 e 27/06/26</span>
-              </div>
-              <div className="flex items-center gap-2 text-sm text-white">
-                <MapPin className="h-4 w-4 text-neon-pink" />
-                <span className="font-mono">CIn-UFPE</span>
-              </div>
-            </div>
           </div>
         </div>
       </div>
