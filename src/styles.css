@@ -76,10 +76,8 @@
   --neon-mint: oklch(0.88 0.20 165);    /* ~#22ffaa */
   --neon-yellow: oklch(0.92 0.18 95);   /* ~#ffd400 */
 
-  /* --glass: light frosted tint used together with backdrop-filter blur.
-     --glass-strong: opaque fallback for browsers without backdrop-filter. */
-  --glass: oklch(1 0 0 / 0.1);
-  --glass-strong: oklch(0.22 0.03 295 / 0.72);
+  /* Semi-transparent dark background, always visible. Blur is decorative only. */
+  --glass: oklch(0.22 0.03 295 / 0.65);
   --glass-border: oklch(1 0 0 / 14%);
 
   --shadow-glow-pink: 0 0 40px oklch(0.72 0.28 350 / 0.45), 0 0 90px oklch(0.72 0.28 350 / 0.25);
@@ -123,19 +121,12 @@
   .font-display { font-family: var(--font-display); letter-spacing: -0.02em; }
   .font-mono    { font-family: var(--font-mono); }
 
-  /* Solid fallback so cards stay visible if backdrop-filter is unavailable. */
+  /* Always visible dark background; blur is a decorative enhancement only. */
   .glass {
-    background-color: var(--glass-strong);
+    background-color: var(--glass);
     border: 1px solid var(--glass-border);
-  }
-  /* When backdrop-filter is supported, use the lighter tint + blur so the
-     frosted-glass effect shows through. */
-  @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-    .glass {
-      background-color: var(--glass);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-    }
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
   }
 
   .glow-pink { box-shadow: var(--shadow-glow-pink); }
