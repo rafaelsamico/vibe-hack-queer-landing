@@ -9,7 +9,7 @@ const links = [
 export function Nav() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
-      <div className="glass border-b border-white/5">
+      <div className="glass backdrop-blur-xl border-b border-white/5">
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <a href="#top" className="flex items-center gap-2.5 group">
             <span className="grid h-9 w-9 place-items-center rounded-lg bg-neon-pink/15 text-neon-pink ring-2 ring-neon-cyan/40">
