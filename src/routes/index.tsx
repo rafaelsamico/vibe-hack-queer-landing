@@ -61,10 +61,10 @@ function Index() {
       <Nav />
       <main>
         <Hero />
-        <Organizacao />
         <Sobre />
         <Cronograma />
         <FAQ />
+        <Organizacao />
         <Patrocinadores />
       </main>
       <Footer />

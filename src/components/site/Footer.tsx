@@ -25,7 +25,7 @@ export function Footer() {
                 href="https://portal.cin.ufpe.br/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-neon-cyan transition hover:text-neon-pink hover:underline"
+                className="text-neon-pink underline transition hover:text-neon-cyan"
               >
                 CIn-UFPE
               </a>
