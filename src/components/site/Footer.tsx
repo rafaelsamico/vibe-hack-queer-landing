@@ -1,4 +1,4 @@
-import { Code2, Github, Instagram, Twitter } from "lucide-react";
+import { Code2, Github, Instagram, Sparkles, Twitter } from "lucide-react";
 
 export function Footer() {
   return (
@@ -29,6 +29,20 @@ export function Footer() {
               >
                 CIn-UFPE
               </a>
+            </p>
+            <p className="text-center font-mono font-bold text-xs text-white">
+              Contato:{" "}
+              <a
+                href="mailto:vibehack@cin.ufpe.br"
+                className="text-neon-pink underline transition hover:text-neon-cyan"
+              >
+                vibehack@cin.ufpe.br
+              </a>
+            </p>
+            <p className="flex items-center justify-center gap-1.5 text-center font-mono text-xs text-foreground/55">
+              <Sparkles className="h-3 w-3" aria-hidden />
+              Este site foi vibe codado
+              <Sparkles className="h-3 w-3" aria-hidden />
             </p>
           </div>
           
