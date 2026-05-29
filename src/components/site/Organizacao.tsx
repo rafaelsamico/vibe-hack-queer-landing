@@ -23,6 +23,14 @@ export function Organizacao() {
                 loading="lazy"
               />
             </a>
+            <a href="https://ines.org.br/" target="_blank" rel="noopener noreferrer">
+              <img
+                src="ines-logo.png"
+                alt="INES - INCT para Engenharia de Software"
+                className="h-40 w-auto md:h-44"
+                loading="lazy"
+              />
+            </a>
           </div>
         </div>
       </div>
